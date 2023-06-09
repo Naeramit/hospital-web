@@ -23,11 +23,11 @@ export default function LoginForm() {
                 <RegistryInput label="License Number" type="text" />
                 <div className="flex justify-between mt-10 ">
                     <button className="btn  btn-warning  w-[200px] text-xl">Clear</button>
-                    <button className="btn btn-primary w-[200px] text-xl" 
+                    <button className="btn btn-primary w-[360px] text-xl" 
                     onClick={(e) => {
                         e.preventDefault()
                         window.my_modal_1.showModal()
-                    }}>Confirm</button>
+                    }}>Add user & get password</button>
                     <dialog id="my_modal_1" className="modal">
                         <form method="dialog" className="modal-box">
                             <h3 className="font-bold text-lg">{headModal}</h3>
