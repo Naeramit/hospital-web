@@ -4,6 +4,7 @@ import RegistryPage from '../pages/RegistryPage'
 import CurrentHistory from '../pages/CurrentHistoryPage'
 import WorkspacePage from '../pages/WorkspacePage';
 import DoctorOpdPage from '../pages/DoctorOPDPage';
+import DiagnosisPage from '../pages/DiagnosisPage';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,12 @@ const router = createBrowserRouter([
       element: (
         <DoctorOpdPage/>
       )
-
+    },
+    {
+      path: '/diagnosis',
+      element: (
+        <DiagnosisPage/>
+      )
     }
   ]);
 

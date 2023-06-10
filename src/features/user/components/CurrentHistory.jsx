@@ -1,6 +1,10 @@
 
 
 export default function CurrentHistory() {
+
+
+
+
   return (
     <div className=" bg-white  w-screen p-2 flex flex-col items-center">
       <form className=" w-full flex flex-col items-center">
@@ -36,8 +40,8 @@ export default function CurrentHistory() {
             <textarea className="textarea textarea-bordered min-h-[150px]"></textarea>
           </div>
         </div>
-        <div className="flex w-full justify-end mt-4">
-        <button className="btn btn-success w-[600px] text-xl text-white ">Save</button>
+        <div className="flex w-full justify-end mt-2">
+        <button type="submit" className="btn btn-success w-[600px] text-xl text-white ">Save</button>
         </div>
       </form>
     </div>

@@ -3,12 +3,8 @@ import RadioInput from './RadioInput'
 import SelectInput from './SelectInput'
 
 
-export default function LoginForm() {
-    const gender = [{ id: 1, value: "male" }, { id: 2, value: "female" }]
-    const role = [{ id: 1, value: "physician" }, { id: 2, value: "dentist" }, { id: 3, value: "nurse" }, { id: 4, value: "phamacist" }, { id: 5, value: "medical technologist" }, { id: 6, value: "radiological technologist" }, { id: 7, value: "physiotherapist" }, { id: 0, values: "others" }]
-    const headModal = "Success"
-    const contentModal = "username ... is  created \n password is ........ "
-
+export default function RegistryForm(prop) {
+    const { formData, respone} = prop
 
 
 
@@ -18,8 +14,8 @@ export default function LoginForm() {
                 <RegistryInput label="Username" type="text" />
                 <RegistryInput label="First Name" type="text" />
                 <RegistryInput label="Last Name" type="text" />
-                <RadioInput name="Gender" data={gender} />
-                <SelectInput name="Role" data={role} />
+                <RadioInput name="Gender" data={formData.gender} />
+                <SelectInput name="Role" data={formData.role} />
                 <RegistryInput label="License Number" type="text" />
                 <div className="flex justify-between mt-10 ">
                     <button className="btn  btn-warning  w-[200px] text-xl">Clear</button>
@@ -30,8 +26,8 @@ export default function LoginForm() {
                     }}>Add user & get password</button>
                     <dialog id="my_modal_1" className="modal">
                         <form method="dialog" className="modal-box">
-                            <h3 className="font-bold text-lg">{headModal}</h3>
-                            <p className="py-4">{contentModal}</p>
+                            <h3 className="font-bold text-lg">{respone.title}</h3>
+                            <p className="py-4">{respone.result}</p>
                             <div className="modal-action">
                                 <button className="btn">Close</button>
                             </div>
