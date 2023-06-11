@@ -9,7 +9,7 @@ export default function WorkspacePage() {
         <>
             <HeaderMain title="My Workspace" name="นพ.สวัสดี มีสุข" logo={ManDoctorLogo} />
             <div className="flex  justify-center">
-                <Workspace/>
+                <Workspace />
             </div>
         </>
     )

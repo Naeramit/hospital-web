@@ -1,15 +1,17 @@
 
 
-export default function AddBar() {
+export default function AddBar(prop) {
+const {title , type} = prop
+
+const typeSelected = type.map( obj => <option  value={obj.id}>{obj.name}</option>)
+
   return (
     <form className="w-[1400px] bg-base-300 min-h-[120px] flex-col rounded-lg">
-        <div className="w-full rounded-t-lg h-8 font-bold flex justify-center items-center mt-2"> Create New Diagnosis</div>
+        <div className="w-full rounded-t-lg h-8 font-bold flex justify-center items-center mt-2"> {title} </div>
         <div className="w-full flex mt-1  gap-4 justify-center items-center">
             <div>
             <select  className="min-w-[200px] w-[200px] h-[40px] rounded-lg text-center font-bold">
-                <option value="1">Principle</option>
-                <option value="2">Comorbid</option>
-                <option value="3">Complicate</option>
+              {typeSelected}
             </select>
             </div>
             <div>

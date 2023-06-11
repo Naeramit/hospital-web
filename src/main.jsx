@@ -2,13 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import store from './store'
 import {getAccessToken} from './utils/localstorage.js'
+import {getUser} from './features/auth/slice/auth-slice.js'
 
-
+if (getAccessToken()){
+  store.dispatch(getUser());
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>
 )

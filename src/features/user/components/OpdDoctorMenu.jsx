@@ -1,5 +1,5 @@
 
-export default function DoctorOpdMenu(prop) {
+export default function OpdDoctorMenu(prop) {
     const {active} = prop
     const baseClass = "min-w-[150px] flex justify-center "
     const activeClass = baseClass + " bg-info"

@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import LoginPage from '../pages/LoginPage'
-import RegistryPage from '../pages/RegistryPage'
-import CurrentHistory from '../pages/CurrentHistoryPage'
+import LoginPage from '../pages/LoginPage';
+import RegistryPage from '../pages/RegistryPage';
+import OpdCurrentHistory from '../pages/OpdCurrentHistoryPage';
 import WorkspacePage from '../pages/WorkspacePage';
-import DoctorOpdPage from '../pages/DoctorOPDPage';
-import DiagnosisPage from '../pages/DiagnosisPage';
+import OpdDoctorPage from '../pages/OpdDoctorPage'
+import OpdDiagnosisPage from '../pages/OpdDiagnosisPage';
+import OpdDischargePage from '../pages/OpdDischargePage';
+import EditPassword from '../pages/EditPassword';
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
     {
       path: '/currenthistory',
       element: (
-        <CurrentHistory/>
+        <OpdCurrentHistory/>
       )
     },
     {
@@ -33,17 +35,30 @@ const router = createBrowserRouter([
       )
     },
     {
-      path: '/doctoropd',
+      path: '/opd/doctor',
       element: (
-        <DoctorOpdPage/>
+        <OpdDoctorPage/>
       )
     },
     {
       path: '/diagnosis',
       element: (
-        <DiagnosisPage/>
+        <OpdDiagnosisPage/>
       )
-    }
+    },
+    {
+      path: '/discharge',
+      element: (
+        <OpdDischargePage/>
+      )
+    },
+    {
+      path: '/editpassword',
+      element: (
+        <EditPassword/>
+      )
+    },
+
   ]);
 
   export default function Router() {

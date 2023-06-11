@@ -1,4 +1,4 @@
-import RegistryForm from '../features/auth/components/RegistryForm';
+import RegistryForm from '../features/admin/components/RegistryForm';
 import HeaderMain from '../layouts/HeaderMain'
 import AdminLogo from '../icons/admin-logo.svg'
 import Menu from '../features/admin/components/Menu'

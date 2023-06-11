@@ -1,9 +1,7 @@
-import PatientList from "./PateintList"
+import PatientList from "./PatientList"
 
-export default function DoctorOpd(prop) {
+export default function OpdDoctor(prop) {
     const {patientList} = prop
-
-
 
 
 
