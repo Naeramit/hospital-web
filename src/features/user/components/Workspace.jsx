@@ -1,5 +1,10 @@
+import { Link } from 'react-router-dom';
+
 
 export default function Workspace() {
+
+
+    
     return (
         <div className="flex flex-col items-center w-[80%] h-[600px] mt-6">
             <div className="w-full flex justify-end h-12 my-4">
@@ -30,13 +35,13 @@ export default function Workspace() {
                                 <div className="form-control w-52">
                                     <label className="cursor-pointer label">
                                         <span className="label-text font-bold">ER</span>
-                                        <input type="checkbox" className="toggle toggle-success"  />
+                                        <input type="checkbox" className="toggle toggle-success" />
                                     </label>
                                 </div>
                                 <div className="form-control w-52">
                                     <label className="cursor-pointer label">
                                         <span className="label-text font-bold">LR</span>
-                                        <input type="checkbox" className="toggle toggle-success"  />
+                                        <input type="checkbox" className="toggle toggle-success" />
                                     </label>
                                 </div>
                                 <div className="form-control w-52">
@@ -59,12 +64,16 @@ export default function Workspace() {
                 </dialog>
             </div>
             <div className="w-full h-[600px] flex flex-wrap bg-white p-10  gap-16 items-start">
-                <div className="bg-success w-[200px] h-[80px]  rounded-lg p-4 hover:bg-secondary-focus text-4xl text-white  font-bold flex justify-center items-center">
-                    <h1>OPD GP</h1>
-                </div>
-                <div className="bg-success w-[200px] h-[80px]  rounded-lg p-4 hover:bg-secondary-focus text-4xl text-white  font-bold flex justify-center items-center">
-                    <h1>ER</h1>
-                </div>
+                <Link to={'/doctor/workspace/1'}>
+                    <div className="bg-success w-[200px] h-[80px]  rounded-lg p-4 hover:bg-secondary-focus text-4xl text-white  font-bold flex justify-center items-center">
+                        <h1>OPD GP</h1>
+                    </div>
+                </Link>
+                <Link to={'/doctor/workspace/2'}>
+                    <div className="bg-success w-[200px] h-[80px]  rounded-lg p-4 hover:bg-secondary-focus text-4xl text-white  font-bold flex justify-center items-center">
+                        <h1>ER</h1>
+                    </div>
+                </Link>
             </div>
         </div>
     )

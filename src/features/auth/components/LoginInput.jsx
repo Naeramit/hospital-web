@@ -3,7 +3,8 @@ export default function LoginInput(prop) {
         label, 
         type,
         value,
-        onChange
+        onChange,
+        name
     } = prop;
 
     return (
@@ -16,6 +17,7 @@ export default function LoginInput(prop) {
             className="input input-bordered input-primary  w-full max-w-xs "
             value={value}
             onChange={onChange}
+            name={name}
              />
         </div>
     );

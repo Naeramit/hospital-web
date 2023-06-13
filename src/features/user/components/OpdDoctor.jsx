@@ -1,4 +1,5 @@
 import PatientList from "./PatientList"
+import { Link } from 'react-router-dom';
 
 export default function OpdDoctor(prop) {
     const {patientList} = prop
@@ -61,7 +62,9 @@ export default function OpdDoctor(prop) {
 
             </div>
             <div className="w-[80%] flex justify-end mt-4">
-                <button className="btn hover:bg-success font-bold hover:text-white"> Back to My Workspace </button>
+                <Link  to={'/doctor/'}>
+                <button className="btn hover:bg-success font-bold hover:text-white"> Back to My Workspace </button>                
+                </Link>
             </div>
         </>
     )

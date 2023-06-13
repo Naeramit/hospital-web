@@ -1,5 +1,4 @@
 import HeaderMain from '../layouts/HeaderMain'
-import MaleDoctor from '../icons/male-doctor.svg'
 import PatientData from '../features/user/components/PatientData'
 import OpdDischarge from '../features/user/components/OpdDischarge'
 
@@ -9,7 +8,7 @@ export default function OpdDischargePage() {
 
   return (
     <>
-      <HeaderMain title="OPD-GP: Consultation => Discharge" name="นพ. สวัสดี มีสุข" logo={MaleDoctor} />
+      <HeaderMain title="OPD-GP: Consultation => Discharge"  />
       <PatientData patient={patient} />
       <div className="flex  flex-col  items-center">
         <OpdDischarge  orderList={orderList} />

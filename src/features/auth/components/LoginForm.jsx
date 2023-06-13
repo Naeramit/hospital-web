@@ -25,8 +25,8 @@ export default function LoginForm() {
     return (
         <div className='bg-white flex  justify-center min-w-[400px] max-w-[500px] min-h-[400px] rounded-lg'>
                 <form className="felx flex-col w-[80%]" onSubmit={handleSubmitForm(onSubmit)}>
-                    <LoginInput label="Username"/>
-                    <LoginInput label="Password" type="password"/>
+                    <LoginInput label="Username" name="username" value={input.username} onChange={handleChangeInput}/>
+                    <LoginInput label="Password" type="password" name="password" value={input.password} onChange={handleChangeInput}/>
                     <div className="flex  justify-center mt-12 mb-6">
                         <button className="btn btn-primary w-56 text-xl">log in</button>
                     </div>

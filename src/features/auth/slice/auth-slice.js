@@ -7,8 +7,7 @@ const initialState = {
     error: null,
     loading: false,
     user: null,
-    initialLoading: false,
-    isNewUser: false
+    initialLoading: false
   };
 
 
