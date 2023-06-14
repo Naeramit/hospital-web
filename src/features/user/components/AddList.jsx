@@ -4,13 +4,19 @@ import EditIcon from '../../../icons/edit.svg'
 
 
 export default function AddList(prop) {
-    const { list, type, handleOnClickDelete, handleOnClickUpdateMode } = prop
+    const { list, type, status ,handleOnClickDelete, handleOnClickUpdateMode } = prop
 
 
 
     const AddList = list.map(add => {
 
         const objType = type.find(e => e.id == add.type)
+
+
+ 
+        const objStatus = add.type == 1  &&  status.find(e => e.id == add.onset)
+
+
 
         return (
             <div className="w-[98%] h-[60px] bg-base-100  flex  justify-around items-center mt-1  ml-1 rounded-lg hover:bg-base-300" 
@@ -20,21 +26,21 @@ export default function AddList(prop) {
             >
 
                 <div className="flex  justify-start  ml-16 items-center min-w-[200px] min-h-[60px] h-[60px]">
-                    <div className="text-1xl font-bold "> {objType.name} </div>
+                    <div className="text-1xl font-bold "> {objType?.name} </div>
                 </div>
 
                 <div className="flex  items-center  justify-start  ml-12  min-w-[700px] min-h-[60px] gap-4 ">
-                    <div className="text-1xl font-bold"> {add.diagnosis} </div>
-                    { add?.amount &&
-                        <div className="text-1xl "> # {add.amount} </div>
+                    <div className="text-1xl font-bold"> {add?.diagnosis || (add?.drug?.name  + " " + add?.drugDescription?.description)} </div>
+                    { add?.unitNumber &&
+                        <div className="text-1xl "> # {add.unitNumber} </div>
                     }
 
                 </div>
 
                 <div className="min-w-[100px] flex justify-start  ">
-                    {add?.statusBar &&
+                    { objStatus &&
                         <div className='min-w-[22px] min-h-[16px] bg-base-200 rounded-md text-[16px] px-1'>
-                            {add?.statusBar}
+                            {objStatus?.name}
                         </div>
                     }
                 </div>
@@ -69,7 +75,7 @@ export default function AddList(prop) {
         )
     })
     return (
-        <div className=" w-[1400px] max-h-[300px] h-[300px]  flex flex-col   overflow-auto ">
+        <div className=" w-[1400px] max-h-[400px] h-[400px]  flex flex-col   overflow-auto ">
             {AddList}
         </div>
     )

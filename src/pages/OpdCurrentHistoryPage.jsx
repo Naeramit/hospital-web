@@ -34,6 +34,9 @@ export default function OpdCurrentHistoryPage() {
             setConsultation(res.data[0])
             setPatient(res.data[0].patient)
             setCreateUser(res.data[0].user.firstName + " " +res.data[0].user.lastName)
+            if (res.data[0].attendUserId){
+                setRecord(true)
+            }
         })
       }, [])
 
@@ -45,7 +48,12 @@ export default function OpdCurrentHistoryPage() {
             <PatientData patient={patient} createUser={createUser}/>
             <ConsultationMenu active="1" recorded={recorded} consultationId={consultationId}/>
             <div className="flex  justify-center">
-                <OpdCurrentHistory history={consultation} recorded={recorded} handleOnChange={handleOnChange} handleOnClick={handleOnClick}/> 
+                <OpdCurrentHistory 
+                history={consultation} 
+                recorded={recorded} 
+                handleOnChange={handleOnChange} 
+                handleOnClick={handleOnClick}
+                /> 
             </div>
         </>
     )

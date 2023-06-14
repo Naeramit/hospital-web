@@ -1,9 +1,12 @@
+import TailButton from '../../../components/TailButton'
+import { Link } from 'react-router-dom'
+import Workspace from './workspace'
+
 
 
 export default function CurrentHistory({history, handleOnChange, handleOnClick, recorded}) {
   const beforeRecord = "btn btn-success w-[400px] text-xl text-white "
   const afterRecord = "btn btn-base-300 w-[400px] text-xl"
-
 
 
 
@@ -63,7 +66,14 @@ export default function CurrentHistory({history, handleOnChange, handleOnClick, 
             ></textarea>
           </div>
         </div>
-        <div className="flex w-full justify-end mt-2">
+        <div className="flex w-full justify-around mt-2">
+        <div >
+        
+        <Link to ={`/doctor/workspace/${history?.workspaceId}`}>
+        <TailButton name="BACK TO Patient List"/>
+        </Link>
+
+        </div>
         <button type="submit" className={recorded ? afterRecord : beforeRecord}
         onClick={handleOnClick}
         >Save</button>

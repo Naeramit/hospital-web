@@ -1,19 +1,22 @@
 import AddBar from './AddBar'
 import AddList from './AddList'
-import DischargeTailBar from './DischargeTailBar'
 
 
-export default function OpdDischarge(prop) {
-  const { orderList} = prop
-  const orderType = {
-      title: "Create New Order",
-      type: [{ id: 1, name: "Drug" }, { id: 2, name: "Equip" }, { id: 3, name: "F/U" }]
-  }
+
+export default function OpdDischarge({orderList, handleOnChange,handleOnClickAddOrder, handleOnClickDelete, handleOnClickUpdateMode, addBar, defaultAdd, err, editId}) {
+
+  const title = "Create New Order"
+  const type = [{ id: 1, name: "Drug" }, { id: 2, name: "Equip" }, { id: 3, name: "F/U" }]
+  const status = [{id:1 , name: "stat"}, {id:2 , name: "discharge"} , {id:3 , name: "admit"}]
+
+  const  list = orderList.map( order => {
+    return {...order,  func: {update: true, del: true}}
+  })
 
 
   return (
     <>
-      <AddBar title={orderType.title}  type={orderType.type}/>
+      <AddBar title={title}  type={type} handleOnChange={handleOnChange} handleOnClickAdd={handleOnClickAddOrder} addBar={addBar} defaultAdd={defaultAdd} err={err} editId={editId}/>
       <div className="w-[1400px] h-[30px] bg-base-200  flex  justify-around items-center mt-4">
         <div className="flex  justify-center  items-center min-w-[200px] h-[30px]">
           <div className="text-1xl font-bold "> TYPE </div>
@@ -28,10 +31,9 @@ export default function OpdDischarge(prop) {
       </div>
 
       <div className=" w-[1400px] max-h-[400px]  h-[400px]  flex flex-col  bg-white  shadow-lg rounded-b-lg  overflow-auto ">
-        <AddList list={orderList}  type={orderType.type}/>
+        <AddList list={list}  type={type} status={status} handleOnClickDelete={handleOnClickDelete} handleOnClickUpdateMode={handleOnClickUpdateMode}/>
       </div>
 
-      <DischargeTailBar/>
     </>
   )
 }
