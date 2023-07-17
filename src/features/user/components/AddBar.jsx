@@ -12,7 +12,7 @@ const typeSelected = type.map( obj => {
 })
 
   return (
-    <form className="w-[1400px] bg-base-300 min-h-[120px] flex-col rounded-lg" >
+    <form className="w-[1400px] bg-base-300 min-h-[120px] flex-col rounded-lg mt-2" >
         <div className="w-full rounded-t-lg h-8 font-bold flex justify-center items-center mt-2"> {editId ? "EDIT MODE" :title} </div>
         <div className="w-full flex mt-1  gap-4 justify-center items-center">
             <div>

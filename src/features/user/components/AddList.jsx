@@ -10,18 +10,18 @@ export default function AddList(prop) {
 
     const AddList = list.map(add => {
 
-        const objType = type.find(e => e.id == add.type)
+        const objType = type.find(e => e?.id == add?.type)
 
 
  
-        const objStatus = add.type == 1  &&  status.find(e => e.id == add.onset)
+        const objStatus = add?.type == 1  &&  status?.find(e => e?.id == add?.onset)
 
 
 
         return (
             <div className="w-[98%] h-[60px] bg-base-100  flex  justify-around items-center mt-1  ml-1 rounded-lg hover:bg-base-300" 
-            key={add.id} 
-            value={add.id}
+            key={add?.id} 
+            value={add?.id}
 
             >
 
@@ -32,7 +32,7 @@ export default function AddList(prop) {
                 <div className="flex  items-center  justify-start  ml-12  min-w-[700px] min-h-[60px] gap-4 ">
                     <div className="text-1xl font-bold"> {add?.diagnosis || (add?.drug?.name  + " " + add?.drugDescription?.description)} </div>
                     { add?.unitNumber &&
-                        <div className="text-1xl "> # {add.unitNumber} </div>
+                        <div className="text-1xl "> # {add?.unitNumber} </div>
                     }
 
                 </div>
@@ -64,7 +64,7 @@ export default function AddList(prop) {
                         onClick={handleOnClickDelete}
                         >
                             <img src={CancelIcon} alt="cancel" className='w-[20px] rounded-sm hover:bg-warning hover:w-[22px]'
-                                id={add.id}
+                                id={add?.id}
                             />
                         </div>
                     }

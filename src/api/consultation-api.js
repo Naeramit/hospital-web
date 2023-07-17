@@ -13,7 +13,7 @@ export const updateDiagnosis = (consultationId, diagnosisId, payload) => axios.p
 
 export const deleteDiagnosis = (consultationId, diagnosisId) => axios.delete(`/consultation/${consultationId}/diagnosis/${diagnosisId}`)
 
-export const getDrugOrder = (consultationId) => axios.get(`/consultation/${consultationId}/drugorder`)
+export const getAllDrugOrder = (consultationId) => axios.get(`/consultation/${consultationId}/drugorder`)
 
 export const addDrugOrder = (consultationId, payload) => axios.post(`/consultation/${consultationId}/drugorder`, payload)
 
@@ -21,7 +21,5 @@ export const addDrugOrder = (consultationId, payload) => axios.post(`/consultati
 export const deleteDrugOrder = (consultationId, drugorderId) => axios.delete(`/consultation/${consultationId}/drugorder/${drugorderId}`)
 
 
-// router.get('/:consultationId/drugorder', userController.getAllDrugOrder)
-// router.post('/:consultationId/drugorder', userController.addDrugOrder)
+
 // router.patch('/:consultationId/drugorder/:drugorderId', userController.updateDrugOrder)
-// router.delete('/:consultationId/drugorder/:drugorderId', userController.deleteDrugOrder)

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-
-export default function ConsultationMenu({ active, recorded, consultationId }) {
+export default function ConsultationMenu({ active, recorded, consultationId, forRecordHistory }) {
 
   const baseClass = "min-w-[150px] flex justify-center "
   const activeClass = baseClass + " bg-info"
+  const navigate = useNavigate()
 
   return (
     <div className=" w-full min-h-[66px] flex justify-center items-center ">
@@ -52,13 +53,18 @@ export default function ConsultationMenu({ active, recorded, consultationId }) {
           </li>
         </Link>
 
-        <Link to={`/doctor/diag/${consultationId}`} >
-          <li className="rounded-lg hover:bg-info">
-            <div className={(active == 6 ? activeClass : baseClass) + (recorded ? "bg-success text-white" : "")}>
+        {/* <Link to={`/doctor/diag/${consultationId}`} > */}
+          <li className="rounded-lg hover:bg-info"
+          onClick={()=> navigate(`/doctor/diag/${consultationId}`)}
+           >
+            <div 
+            className={(active == 6 ? activeClass : baseClass) + (recorded ? "bg-success text-white" : "")}
+            onClick={forRecordHistory}
+            >
               DIAGNOSIS
             </div>
           </li>
-        </Link>
+        {/* </Link> */}
 
       </ul>
     </div>

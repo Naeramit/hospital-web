@@ -7,6 +7,9 @@ import {Provider} from 'react-redux'
 import {getAccessToken} from './utils/localstorage.js'
 import {getUser} from './features/auth/slice/auth-slice.js'
 
+
+
+
 if (getAccessToken()){
   store.dispatch(getUser());
 }

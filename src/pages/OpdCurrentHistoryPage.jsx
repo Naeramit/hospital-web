@@ -46,7 +46,7 @@ export default function OpdCurrentHistoryPage() {
         <>
             <HeaderMain title="OPD-GP: Consultation"  />
             <PatientData patient={patient} createUser={createUser}/>
-            <ConsultationMenu active="1" recorded={recorded} consultationId={consultationId}/>
+            <ConsultationMenu active="1" recorded={recorded} consultationId={consultationId} forRecordHistory={ handleOnClick }/>
             <div className="flex  justify-center">
                 <OpdCurrentHistory 
                 history={consultation} 
